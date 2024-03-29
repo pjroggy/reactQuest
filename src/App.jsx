@@ -3,6 +3,8 @@ import './App.css'
 import Avatar from './component/Avatar';
 import PokemonCard from './component/PokemonCard'
 import { useState } from 'react';
+import NavBar from './component/NavBar';
+
 
 const pokemonList = [
   {
@@ -29,18 +31,25 @@ const pokemonList = [
       name: "mew",
     },
   ];
-const pokemon = { name: "mew" };
+
 function App() {
 
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
   return (
     <>
-      {pokemonIndex > 0 && <button type="button" onClick={() => setPokemonIndex(pokemonIndex - 1)}>précédent</button>}
+      {/* {pokemonIndex > 0 && <button type="button" onClick={() => setPokemonIndex(pokemonIndex - 1)}>précédent</button>} */}
       <section>
         <PokemonCard pokemon={pokemonList[pokemonIndex]} />
       </section>
-      {pokemonIndex < pokemonList.length -1 && <button type="button" onClick={() => setPokemonIndex(pokemonIndex + 1)}>suivant</button>}
+      {/* {pokemonIndex < pokemonList.length -1 && <button type="button" onClick={() => setPokemonIndex(pokemonIndex + 1)}>suivant</button>} */}
+      <NavBar handleClickNext={()=> setPokemonIndex(pokemonIndex + 1)}
+              handleClickBack={()=> setPokemonIndex(pokemonIndex -1)}
+              pokemonIndex={pokemonIndex}
+              pokemonList={pokemonList}
+      />
+ 
+ 
       <section>
         {simpsons.map(simpson => <Avatar
           image={simpson.image}
