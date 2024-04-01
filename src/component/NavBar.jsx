@@ -1,12 +1,14 @@
 
+function NavBar({/*handleClickBack, handleClickNext, pokemonIndex,*/ pokemonList, handleClick }) {
 
-function NavBar({/*handleClickBack, handleClickNext, pokemonIndex,*/ pokemonList, handleClick}) {
 
+    const pikachuFind = (pokemon) => pokemon.name === "pikachu"? alert("pikaaaa, pikachuuuu !!!!!!"): null;
+       
     return (
         <>
-        {pokemonList.map((pokemon, index)=> (
-            <button key={pokemon.name} onClick={() => handleClick(index)}>{pokemon.name}</button>)
-        )}
+            {pokemonList.map((pokemon, index) => (
+                <button key={pokemon.name} onClick={() => handleClick(index) + pikachuFind(pokemon) }>{pokemon.name}</button>)
+            )}
         </>
     )
 }
