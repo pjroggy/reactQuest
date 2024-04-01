@@ -8,29 +8,29 @@ import NavBar from './component/NavBar';
 
 const pokemonList = [
   {
-      name: "bulbasaur",
-      imgSrc:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-    },
-    {
-      name: "charmander",
-      imgSrc:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
-    },
-    {
-      name: "squirtle",
-      imgSrc:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
-    },
-    {
-      name: "pikachu",
-      imgSrc:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
-    },
-    {
-      name: "mew",
-    },
-  ];
+    name: "bulbasaur",
+    imgSrc:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+  },
+  {
+    name: "charmander",
+    imgSrc:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+  },
+  {
+    name: "squirtle",
+    imgSrc:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+  },
+  {
+    name: "pikachu",
+    imgSrc:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+  },
+  {
+    name: "mew",
+  },
+];
 
 function App() {
 
@@ -43,13 +43,15 @@ function App() {
         <PokemonCard pokemon={pokemonList[pokemonIndex]} />
       </section>
       {/* {pokemonIndex < pokemonList.length -1 && <button type="button" onClick={() => setPokemonIndex(pokemonIndex + 1)}>suivant</button>} */}
-      <NavBar handleClickNext={()=> setPokemonIndex(pokemonIndex + 1)}
-              handleClickBack={()=> setPokemonIndex(pokemonIndex -1)}
-              pokemonIndex={pokemonIndex}
-              pokemonList={pokemonList}
+      <NavBar
+        // handleClickNext={()=> setPokemonIndex(pokemonIndex + 1)}
+        // handleClickBack={()=> setPokemonIndex(pokemonIndex -1)}
+        handleClick={(index) => setPokemonIndex(index)}
+        // pokemonIndex={pokemonIndex}
+        pokemonList={pokemonList}
       />
- 
- 
+
+
       <section>
         {simpsons.map(simpson => <Avatar
           image={simpson.image}
