@@ -55,11 +55,13 @@ function App() {
         handleClick={(index) => setPokemonIndex(index)}
         // pokemonIndex={pokemonIndex}
         pokemonList={pokemonList}
+
       />
 
 
       <section>
-        {simpsons.map(simpson => <Avatar
+        {simpsons.map(simpson => <Avatar 
+          key={simpson.firstName}
           image={simpson.image}
           firstName={simpson.firstName}
           lastName={simpson.lastName} />)}
